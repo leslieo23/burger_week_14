@@ -2,22 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Mmmmmm Burgers..</title>
+	<title>Burgers!</title>
 </head>
 <body>
-
-<!-- Title -->
-<h1>Mmmmm Burgers...</h1>
-
-<!-- Input Form -->
+<h1>Mmmmmm...Burgers...</h1>
+<img id="burgers"src="burger.png"/>
 <form>
-  <h2>Name a Burger:<input type="text" id="burger"><input type="submit" value="Add burger" id="addBurger"></h2>
+  <h2>Name a Burger: <input type="text" id="burger"><input type="submit" value="Add Item" id="addBurger"></h2>
 </form>
 
-<hr>
-
-<!-- To-Do List -->
-<div id="todos">
+<div id="burgers">
 	
 </div>
 
@@ -25,38 +19,38 @@
 <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
 <script>
-// Create an initial todoCount variable
-var todoCount = 0;
+
+var burgerCount = 0;
 
 $("#addBurger").on("click", function(){
-	// Get the Todo "value" from the textbox
-	var todoTask = $('#burger').val().trim();
 
-	var todoItem = $('<p>');
-	todoItem.attr("id", "item-" + todoCount);
-	todoItem.append(" " + todoTask);
- 
-	var todoClose = $("<button>");
-	todoClose.attr("data-todo", todoCount);
-	todoClose.addClass("checkbox");
-	todoClose.append("X");
+	var burgerTask = $('#burger').val().trim();
 
-	todoItem = todoItem.prepend(todoClose);
-	// Add the button and todo item to the todos div
-	$("#todos").append(todoItem);
-	// Clear the textbox when done
+	var burgerItem = $('<p>');
+	burgerItem.attr("id", "item-" + burgerCount);
+	burgerItem.append(" " + burgerTask);
+	 
+	var burgerClose = $("<button>");
+	burgerClose.attr("data-todo", burgerCount);
+	burgerClose.addClass("checkbox");
+	burgerClose.append("X");
+
+	burgerItem = burgerItem.prepend(burgerClose);
+
+	$("#burgers").append(burgerItem);
+	
 	$('#burger').val("");
-	// Add to the todoCount
-	todoCount++;
+
+	burgerCount++;
 	// Prevent Form from Refreshing (return false)
 	return false;
 });
 
 $(document.body).on('click', '.checkbox', function(){
-	// Get the todoNumber of the button from its data attribute.
-	var todoNumber = $(this).data("todo");
-	// Empty the specific <p> element that previously held the todo item.
-	$("#item-" + todoNumber).empty();
+
+	var burgerNumber = $(this).data("todo");
+
+	$("#item-" + burgerNumber).empty();
 });
 </script>
 
@@ -66,6 +60,12 @@ body{
 	background-color:gold;
 }
 h1{
+	text-align:center;
+}
+#burgers{
+	margin-left:400px;
+}
+form{
 	text-align:center;
 }
 </style>
