@@ -9,6 +9,12 @@ var source = {
         password: "",
         database: "burgers_db"
     },
+    localhost:{
+        port:3306
+        host:'l9dwvv6j64hlhpul.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
+        user:'ub4hi40jr9re3fwb'
+        password:'ov1j5fuuyueaykw3'
+    }
 }
 var connection = mysql.createConnection();
 
